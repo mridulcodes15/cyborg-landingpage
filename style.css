@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #0a0a0c;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    background-image: 
+        linear-gradient(rgba(0, 242, 254, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: grid-glow 8s linear infinite;
+}
+
+@keyframes grid-glow {
+    0%, 100% { background-color: #0a0a0c; }
+    50% { background-color: #0d1117; }
+}
+
+.neon-text {
+    color: #00f2fe;
+    text-shadow: 0 0 5px #00f2fe, 0 0 10px #00f2fe, 0 0 20px #0072ff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 8px #00f2fe;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 85vh;
+    padding: 0 20px;
+}
+
+.system-status {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #4facfe;
+    margin-bottom: 15px;
+    animation: blink 2s infinite;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+    min-height: 80px;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background: transparent;
+    color: #00f2fe;
+    border: 2px solid #00f2fe;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.cta-btn:hover {
+    background: #00f2fe;
+    color: #0a0a0c;
+    box-shadow: 0 0 25px #00f2fe;
+}
+
+.cyber-container {
+    position: relative;
+    padding: 50px;
+    border: 1px solid rgba(0, 242, 254, 0.1);
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+}
+
+.frame-corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #4facfe;
+}
+
+.top-left { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.top-right { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* NEW UI MODAL CSS */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 100;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    position: relative;
+    background: #120207;
+    border: 2px solid #ff0055;
+    padding: 40px;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-box .frame-corner {
+    border-color: #ff0055;
+}
+
+.alert-title {
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.alert-msg {
+    color: #ffb3c6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.modal-close-btn {
+    background: transparent;
+    color: #ff0055;
+    border: 1px solid #ff0055;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.modal-close-btn:hover {
+    background: #ff0055;
+    color: #fff;
+    box-shadow: 0 0 15px #ff0055;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; min-height: 60px; }
+    header { flex-direction: column; gap: 15px; }
+    .cyber-container { padding: 30px 20px; }
+}

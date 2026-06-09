@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyborg Interface // Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo neon-text">CYBORG_OS</div>
+        <nav>
+            <a href="#">SYSTEM</a>
+            <a href="#">AUGMENTS</a>
+            <a href="#">CORE</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="cyber-container">
+            <div class="frame-corner top-left"></div>
+            <div class="frame-corner top-right"></div>
+            <div class="frame-corner bottom-left"></div>
+            <div class="frame-corner bottom-right"></div>
+
+            <div class="system-status">// SYSTEM STATUS: ONLINE //</div>
+            <h1 id="typing-text"></h1>
+            <p>
+                Welcome to the next evolution of human potential. Seamlessly integrate neural networks, cybernetic limbs, and high-fidelity sensory modules into your daily workflow.
+            </p>
+            <button class="cta-btn" id="sync-btn">Initialize Sync</button>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="error-modal">
+        <div class="modal-box">
+            <div class="frame-corner top-left"></div>
+            <div class="frame-corner top-right"></div>
+            <div class="frame-corner bottom-left"></div>
+            <div class="frame-corner bottom-right"></div>
+            <h2 class="alert-title">⚠️ CRITICAL ERROR</h2>
+            <p class="alert-msg">Neuro-link authorization required. Sub-dermal sync protocol rejected by core network.</p>
+            <button class="modal-close-btn" id="close-modal">OVERRIDE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
